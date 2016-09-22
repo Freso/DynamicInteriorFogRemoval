@@ -23,7 +23,7 @@ EndFunction
 Function Fragment_Terminal_03(ObjectReference akTerminalRef)
 ;BEGIN CODE
 DIFR_InteriorFogVisibilityLevel.SetValue(0)
-(DIFR_DynamicInteriorFogRemovalQuest as DIFR_DynamicInteriorFogRemovalScript).ActivateMod()
+(DIFR_DynamicInteriorFogRemovalQuest as DIFR_DynamicInteriorFogRemovalScript).ActivateMod(addModItems = false)
 (DIFR_DynamicInteriorFogRemovalQuest as DIFR_DynamicInteriorFogRemovalScript).ApplyFogSettingsToCellData()
 ;END CODE
 EndFunction

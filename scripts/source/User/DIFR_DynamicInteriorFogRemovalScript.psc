@@ -87,21 +87,18 @@ EndFunction
 Function ApplyFogSettingsToCellData()
 	currentCell = playerRef.GetParentCell()
 	
-	if(currentCell.IsInterior())
-		if(DIFR_InteriorFogVisibilityLevel.GetValueInt() == INVISIBLE)
-			currentCell.SetFogPlanes(0.0, 999999999.0)
-			currentCell.SetFogPower(10.0)
-		elseif(DIFR_InteriorFogVisibilityLevel.GetValueInt() == SUBTLE)
-			currentCell.SetFogPlanes(0.0, 10000.0)
-			currentCell.SetFogPower(2.0)
-		elseif(DIFR_InteriorFogVisibilityLevel.GetValueInt() == VANILLA)
-			;The mod is deactivated through the DIFR_ModSettingsHolotape.
-		endif
-		
-		if(DIFR_InteriorFogVisibilityLevel.GetValueInt() != VANILLA)
-			Debug.Trace("[Dynamic Interior Fog Removal]: Interior Cell Defogged - " + currentCell)
-		endif
-		
+	if(DIFR_InteriorFogVisibilityLevel.GetValueInt() == INVISIBLE)
+		currentCell.SetFogPlanes(0.0, 999999999.0)
+		currentCell.SetFogPower(10.0)
+	elseif(DIFR_InteriorFogVisibilityLevel.GetValueInt() == SUBTLE)
+		currentCell.SetFogPlanes(0.0, 10000.0)
+		currentCell.SetFogPower(2.0)
+	elseif(DIFR_InteriorFogVisibilityLevel.GetValueInt() == VANILLA)
+		;The mod is deactivated through the DIFR_ModSettingsHolotape.
+	endif
+	
+	if(currentCell.IsInterior() && DIFR_InteriorFogVisibilityLevel.GetValueInt() != VANILLA)
+		Debug.Trace("[Dynamic Interior Fog Removal]: Interior Cell Defogged - " + currentCell)
 	endif
 EndFunction
 
