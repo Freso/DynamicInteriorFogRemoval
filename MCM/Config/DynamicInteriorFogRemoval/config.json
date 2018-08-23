@@ -1,7 +1,7 @@
 {
   "modName": "DynamicInteriorFogRemoval",
   "displayName": "Dynamic Interior Fog Removal",
-  "minMcmVersion": 2,
+  "minMcmVersion": 1,
   "content": [
     {
       "text": "Mod Settings",
@@ -13,9 +13,8 @@
       "help": "Choose degree of visibility for interior fog.",
       "valueOptions": {
         "options": ["Invisible", "Subtle", "Vanilla"],
-        "sourceType": "PropertyValueInt",
-        "sourceForm": "DynamicInteriorFogRemoval.esp|1737",
-        "propertyName": "DIFR_InteriorFogVisibilityLevel"
+        "sourceType": "GlobalValue",
+        "sourceForm": "DynamicInteriorFogRemoval.esp|1737"
       }
     }
   ]
