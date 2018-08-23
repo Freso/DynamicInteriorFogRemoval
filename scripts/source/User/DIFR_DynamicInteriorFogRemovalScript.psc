@@ -35,9 +35,7 @@ EndGroup
 
 Event OnInit()
 	playerRef = Game.GetPlayer()
-	
-	;Event sent to the player when the game's difficulty is changed.
-	RegisterForRemoteEvent(playerRef, "OnDifficultyChanged")
+
 	;Event called when the player loads a save game.
 	RegisterForRemoteEvent(playerRef, "OnPlayerLoadGame")
 	;Event for when the player starts a new game, tracks the first quest which takes place after exiting Vault 111.
